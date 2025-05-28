@@ -130,27 +130,26 @@ curl -X POST http://localhost:8080/api/image/predict \
 ## 📊 Output Example
 After training and evaluation, you will see a report like:
 ```aiignore
-Accuracy: 87.5%
-Precision: 86.7%
-Recall: 88.0%
-F1 Score: 87.3%
+Accuracy: 90.5%
+Precision: 90.7%
+Recall: 90.0%
+F1 Score: 90.3%
 ```
 
 ---
 
 ## 🖥️ UI Overview (`index.html`)
 
-The `index.html` page provides a web-based interface to interact with the Kaggle Telco Customer Churn dataset and the trained DL4J model.
+The `index.html` page provides a web-based interface to interact with the Kaggle dog-vs-cat Classifier dataset and the trained DL4J model.
 
 ### 🔧 Features
 
-| Feature           | Description |
-|------------------|-------------|
-| Load Data         | Automatically loads the cleaned dataset and displays it in a table |
-| Search Box        | Allows filtering the table by `customerID` |
-| Data Table        | Shows customer details like `gender`, `tenure`, `MonthlyCharges`, etc. |
-| Predict Button    | Each row has a **Predict** button to generate churn probability |
-| Prediction Column | Displays churn result next to each row (e.g., `Churn: Yes (0.8243)`) |
+| Feature        | Description                                                            |
+|----------------|------------------------------------------------------------------------|
+| Load Data      | Automatically loads the cleaned dataset and displays it in a table     |
+| Data Table     | Shows Image-Classifier details like `images`, `Predict`, and `Result`. |
+| Predict Button | Each row has a **Predict** button to generate Classifier probability        |
+| Result Column  | Displays probability result next to each row (e.g., `Dog` or `cate`)   |
 
 ### UI Screenshot
 ![image-classification-dashboard.png](image-classification-dashboard.png)
@@ -160,9 +159,8 @@ The `index.html` page provides a web-based interface to interact with the Kaggle
 1. User clicks "Predict"
 2. The row's data is sent to the `/predict` endpoint via JavaScript
 3. Backend:
-  - Loads `churn-model.zip`
-  - Applies `transformProcess.json`
-  - Returns churn probability
+  - Loads `image-model.zip`
+  - Returns Classifier probability
 4. UI updates the result cell with prediction
 
 
